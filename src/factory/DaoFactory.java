@@ -1,16 +1,10 @@
 package factory;
 
-import dao.RepositoryDAO;
-import dao.StudentDAOImpl;
-import dao.SubjectDAOImpl;
+import dao.ResultDAO;
+import dao.ResultDAOImpl;
 
 public class DaoFactory {
-    public static RepositoryDAO getDAO(String type){
-        if(type.equalsIgnoreCase("student")){
-            return new StudentDAOImpl();
-        }else if(type.equalsIgnoreCase("subject")){
-            return new SubjectDAOImpl();
-        }
-        throw new IllegalArgumentException("No DAO found");
+    public static ResultDAO createResultDAO() {
+        return new ResultDAOImpl();
     }
 }
